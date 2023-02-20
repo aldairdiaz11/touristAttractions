@@ -14,13 +14,18 @@
       <th>State</th>
       <th>State Details</th>
     </tr>
-    {% for item in attractions|dictsort:"state" %}
+    {% for item in attractions %}
       <tr>
-        <td>{{ item.attraction_name }}</td>
-        <td>{{ item.state }}</td>
-        <td><a href="{% url "details" item.state|slugify %}">State Details</a></td>
+        <td>{{ item.attractionName }}</td>
+        <td>{{ item.homeState }}</td>
+{#        <td><a href="{% url "details" item.state|slugify %}">State Details</a></td>#}
+        <td>State Details</td>
       </tr>
     {% endfor %}
   </table>
+
+  <a href="{% url 'state-create' %}">Add a State</a>
+  <a href="{% url 'attraction-create' %}">Add a Attraction</a>
+
 {% endblock %}
 

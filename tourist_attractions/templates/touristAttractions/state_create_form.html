@@ -1,0 +1,17 @@
+{% extends "touristAttractions/base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'touristAttractions/style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1>State Create</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
+
